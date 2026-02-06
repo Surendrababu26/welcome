@@ -13,14 +13,19 @@
 
 <script>
 function getData() {
-    fetch("http://127.0.0.1:5000/data")
+    fetch("https://welcome-1ush.onrender.com/data")  // Updated URL
         .then(response => response.json())
         .then(result => {
             document.getElementById("output").innerText = result.message;
+        })
+        .catch(error => {
+            console.error("Error fetching data:", error);
+            document.getElementById("output").innerText = "Failed to get data.";
         });
 }
 </script>
 
 </body>
 </html>
+
 
