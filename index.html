@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backend Data Example</title>
+</head>
+<body>
+
+<h2>Get data from Python backend</h2>
+
+<button onclick="getData()">Click Me</button>
+
+<h3 id="output"></h3>
+
+<script>
+function getData() {
+    fetch("http://127.0.0.1:5000/data")
+        .then(response => response.json())
+        .then(result => {
+            document.getElementById("output").innerText = result.message;
+        });
+}
+</script>
+
+</body>
+</html>
+
